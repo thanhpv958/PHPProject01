@@ -90,5 +90,12 @@
             $this->setQuery($query);
             return $this->loaddAllRows();
         }
+
+        //Categories
+        function getCategories($parent_id) {
+            $query = "SELECT * FROM menu WHERE parent_id='$parent_id' ORDER BY id ASC";
+            $this->setQuery($query);
+            return $this->loaddAllRows();
+        }
     }
 ?>
