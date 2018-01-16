@@ -51,14 +51,10 @@
             return $M_admin->pagination($this->_config['tableName'], $this->_config['start'], $this->_config['limit']);  
         }
 
-        private function link($page) {
-            // Nếu trang < 1 thì ta sẽ lấy link first
+        private function link($page) {  
             if ($page <= 1){
                 return $this->_config['link_first'];
             }
-            // Ngược lại ta lấy link_full
-            // Như tôi comment ở trên, link full có dạng domain.com/page/{page}.
-            // Trong đó {page} là nơi bạn muốn số trang sẽ thay thế vào
             return str_replace('{page}', $page, $this->_config['link_full']);
         }
 
