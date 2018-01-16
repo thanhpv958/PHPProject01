@@ -5,12 +5,12 @@
             <div class="sidebar">
                 <ul class="menu">
                     <li>
-                        <a href="#">
+                        <a href="index.php">
                             <i class="fa fa-home"></i> Dashboard</a>
                     </li>
                     <li>
-                        <a href="#">
-                            <i class="fa fa-bars"></i> Danh mục bài viết</a>
+                        <a href="./addMenu.php">
+                            <i class="fa fa-bars"></i> Menu</a>
                     </li>
                     <li>
                         <a href="#">

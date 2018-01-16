@@ -97,5 +97,7 @@
             $this->setQuery($query);
             return $this->loaddAllRows();
         }
+
+        
     }
 ?>
