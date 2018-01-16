@@ -1,0 +1,62 @@
+.sidebar {
+  height: 100vh;
+  background-color: #3A4651;
+  font-size: 18px;
+  color: white; }
+  .sidebar ul {
+    list-style: none;
+    padding: 20px; }
+    .sidebar ul li {
+      width: 195px; }
+      .sidebar ul li a {
+        text-decoration: none;
+        display: block;
+        background-color: #3A4651;
+        border: 1px solid gray;
+        padding: 10px;
+        color: #fff; }
+        .sidebar ul li a:hover {
+          background-color: black; }
+      .sidebar ul li .sub-menu {
+        margin: 0px;
+        padding: 0px;
+        display: none; }
+        .sidebar ul li .sub-menu a {
+          padding-left: 35px; }
+
+.header nav {
+  background-color: #3A4651; }
+
+.footer {
+  background-color: #d6d6d6;
+  bottom: 0px; }
+
+.add-video p.errorAddVideo {
+  color: red; }
+.add-video p.successAddVideo {
+  color: blue;
+  font-weight: 500;
+  font-size: 20px; }
+.add-video .form-check-label {
+  padding-right: 10px; }
+
+.login .linkAccount {
+  margin-top: -20px;
+  text-decoration: none; }
+  .login .linkAccount:hover {
+    color: green; }
+.login .linkPassword {
+  color: red;
+  text-decoration: none;
+  margin-top: 5px; }
+  .login .linkPassword:hover {
+    color: green; }
+
+* {
+  margin: 0px;
+  padding: 0px; }
+
+body {
+  background-color: #F8F9FA; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,36 @@
+.sidebar {
+    height: 100vh;
+    background-color:#3A4651;
+    font-size: 18px;
+    color: white;
+    
+    ul {
+        list-style: none;
+        padding: 20px;
+        
+        li {
+            width: 195px;
+            a {
+                text-decoration: none;
+                display:block;
+                background-color: #3A4651;
+                border: 1px solid gray;
+                padding: 10px;
+                color: #fff;
+                &:hover {
+                    background-color: black;
+                }
+            }
+
+            .sub-menu {
+                margin: 0px;
+                padding: 0px;
+                display: none;
+
+                a {
+                    padding-left: 35px;
+                }
+            }
+        }
+    }
+}

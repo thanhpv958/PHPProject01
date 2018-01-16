@@ -1,0 +1,33 @@
+.add-video {
+    p.errorAddVideo {
+        color: red;
+    }
+    p.successAddVideo {
+        color: blue;
+        font-weight: 500;
+        font-size: 20px;
+    }
+    .form-check-label {
+        padding-right: 10px;
+    }
+}
+
+.login {
+   
+   .linkAccount {
+        margin-top: -20px;
+        text-decoration: none;
+        &:hover {
+            color: green;
+        }
+   }
+
+   .linkPassword {
+       color: red;
+       text-decoration: none;
+       margin-top: 5px;
+       &:hover {
+           color: green;
+       }
+   }
+}
