@@ -32,7 +32,10 @@
   
             <?php
               $c_menu = new c_menu();
-              $c_menu->selectCtrl('parent', 'menu');
+              echo "<select name='parent'>";
+              echo "<option value=''0>Select Parent Menu</option>";
+              $c_menu->recurSelectMenu();
+              echo "</select>"
             ?>
           </div>
 

@@ -1,0 +1,26 @@
+.header {
+   ul {
+        padding: 0px !important;
+        li {
+            position: relative;
+            &:hover > ul {
+                display: inline-block;
+            }
+            ul {
+                position: absolute;
+                width: 200px;
+                display: none;
+                li {
+                border-bottom: 1px solid gray;
+                background-color: #343A40;
+                a {
+                    &:hover {
+                        background-color: red;
+                    }
+                }
+               }
+            }
+       }
+   }
+}
+

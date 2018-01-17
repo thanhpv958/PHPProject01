@@ -17,14 +17,12 @@
                             <i class="fa fa-pencil"></i> Bài viết</a>
                         <ul class="sub-menu">
                             <li>
-                                <a href="#">Thêm bài viết</a>
+                                <a href="./addArticle.php">Add Article</a>
                             </li>
                             <li>
                                 <a href="#">Xóa bài viết</a>
                             </li>
-                            <li>
-                                <a href="#">abc</a>
-                            </li>
+                            
                         </ul>
                     </li>
                     <li>
