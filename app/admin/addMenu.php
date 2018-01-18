@@ -33,7 +33,7 @@
             <?php
               $c_menu = new c_menu();
               echo "<select name='parent'>";
-              echo "<option value=''0>Select Parent Menu</option>";
+              echo "<option value='0'>Select Parent Menu</option>";
               $c_menu->recurSelectMenu();
               echo "</select>"
             ?>

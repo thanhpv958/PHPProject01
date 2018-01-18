@@ -86,7 +86,7 @@
             return $this->countRow();
         }
         public function pagination($tableName, $start, $limit) {
-            $query = "SELECT * FROM $tableName ORDER BY id ASC LIMIT $start, $limit";
+            $query = "SELECT * FROM $tableName ORDER BY id DESC LIMIT $start, $limit";
             $this->setQuery($query);
             return $this->loaddAllRows();
         }

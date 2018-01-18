@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-12">
             <div class="listVideo ">
-                <h3>List Slider</h3>
+                <h3>List Article</h3>
                 <table class="table table-hover text-center">
                     <thead>
                         <tr>
@@ -32,7 +32,7 @@
                             ?>
                             <tr>
                                 <td><?php echo $value['id'] ?></td>
-                                <td><?php echo $value['title'] ?></td>
+                                <td class="text-left"><?php echo $value['title'] ?></td>
                                 <td><?php echo $value['category'] ?></td>
                                 <td><img  style="width: 100px; height: 50px;" src="../../public/fileUpload/<?php echo $value['image']?>" alt="slider image" ></td>
                                 <td><?php echo $value['time'] ?></td>

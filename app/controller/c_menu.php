@@ -61,7 +61,7 @@
                 if( empty($link) ) {
                     echo $errors['link'] = '<p class="errorAddVideo">You should enter link</p>';
                 } 
-                  
+                    
                 if(empty($errors)) {
                     $m_menu = new M_menu();
                     return $m_menu->addMenu($title, $parent_id, $link, $status);  

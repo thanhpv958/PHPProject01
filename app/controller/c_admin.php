@@ -19,6 +19,9 @@
             return false;
         }
 
+        function subString($text, $start, $length) {
+            return substr($text, $start, $length) . '...';
+        }
         
 
         //Video

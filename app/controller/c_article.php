@@ -55,7 +55,7 @@
             } else {
                 $this->configP = [
                     'current_page'  => $page, 
-                    'limit'         => 10, 
+                    'limit'         => 6, 
                     'link_full'     => 'listArticle.php?page={page}',
                     'link_first'    => 'listArticle.php',
                     'tableName'         => 'article'

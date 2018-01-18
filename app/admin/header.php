@@ -44,8 +44,8 @@
                                 </div>
                             </li>
                         </ul>
-
                     </div>
-                </nav>   
+                </nav>
+                
             </div> <!-- end header -->
     </div> <!-- end container -->
