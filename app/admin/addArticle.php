@@ -39,7 +39,6 @@
                     require_once '../controller/c_menu.php';
                     $c_menu = new c_menu();
                     echo "<select name='category'>";
-                    echo "<option value='0'>Select Parent Menu</option>";
                     $c_menu->recurSelectMenu();
                     echo "</select>"
                 ?>

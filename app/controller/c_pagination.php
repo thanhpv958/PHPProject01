@@ -60,7 +60,7 @@
 
         public function html() {
             $p ='';
-            $p .= '<ul class="pagination">';
+            $p .= '<ul class="pagination justify-content-center">';
 
                 if( $this->_config['current_page'] > 1 && $this->total_page > 1 )
                     $p .= '<li class="page-item"><a class="page-link" href="'. $this->link( $this->_config['current_page'] -1 ).'">Prev</a></li>';

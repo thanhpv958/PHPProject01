@@ -1,7 +1,10 @@
 <?php
     require_once '../model/m_article.php';
     require_once '../controller/c_admin.php';
-    class C_article extends C_admin {
+    require_once '../controller/c_pagination.php';
+    class C_article extends C_admin  {
+
+        protected $configP;
 
         function addArticle($title, $body, $category, $image, $time, $status) {
             $errors = [];
@@ -15,6 +18,12 @@
                     echo $errors['body'] = '<p class="errorField">You should enter body</p>';
                 } 
                 
+                // category
+                $m_article = new M_article();
+                $resultQueryCat = $m_article->showNameCategory($category);
+                $category = $resultQueryCat[0]['title'];
+                
+
                 if( $image['size'] < 0 ) {
                     echo $errors['image'] = '<p class="errorField">You should enter image</p>';  
 
@@ -37,5 +46,36 @@
                 }
             }
         }
+
+       
+
+        public function configPagination($page) {
+            if( filter_var($page, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1] ]) == false ) {
+                die('Fail. Please check infomation or contact admin');
+            } else {
+                $this->configP = [
+                    'current_page'  => $page, 
+                    'limit'         => 10, 
+                    'link_full'     => 'listArticle.php?page={page}',
+                    'link_first'    => 'listArticle.php',
+                    'tableName'         => 'article'
+                ];
+            }
+            
+        }
+
+        public function getAllArticleP() {
+            $c_pagination = new C_pagination();
+            $c_pagination->init($this->configP);
+            return $c_pagination->getData();
+        }
+
+        public function showPagination() {
+            $c_pagination = new C_pagination();
+            $c_pagination->init($this->configP);
+            return $c_pagination->html();
+        }
+
+
     }
 ?>

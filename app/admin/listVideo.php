@@ -53,9 +53,7 @@
                     </tbody>
                 </table>
                 <?php
-                    $page = isset($_GET['page']) ? $_GET['page'] : 1;
-                    $c_video = new c_video();
-                    $c_video->configPagination($page);
+                    
                     echo $c_video->showPagination();
                    
                 ?>
