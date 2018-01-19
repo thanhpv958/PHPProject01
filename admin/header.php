@@ -1,5 +1,5 @@
 <?php session_start();
-    if( !isset($_SESSION['uid']) )
+    if( !isset($_SESSION['username']) )
         header('location: ./login.php');
 ?>
 <!DOCTYPE html>
@@ -29,7 +29,7 @@
                             <li class="profile dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                     <!-- <div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&s=40')"> </div> -->
-                                    <span class="name">Hi, <?php if(isset($_SESSION['uid'])) echo $_SESSION['uid'] ?> </span>
+                                    <span class="name">Hi, <?php if(isset($_SESSION['username'])) echo $_SESSION['username'] ?> </span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
                                     <a class="dropdown-item" href="#">

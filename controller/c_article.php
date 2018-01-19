@@ -16,8 +16,9 @@
 
                 if( empty($body) ) {
                     echo $errors['body'] = '<p class="errorField">You should enter body</p>';
+                } else {
+                    $body = htmlspecialchars($body);
                 } 
-                
                 // category
                 $m_article = new M_article();
                 $resultQueryCat = $m_article->showNameCategory($category);
@@ -25,18 +26,17 @@
                 
 
                 if( $image['size'] < 0 ) {
-                    echo $errors['image'] = '<p class="errorField">You should enter image</p>';  
-
+                    echo $errors['image'] = '<p class="errorField">Check your image (source, extension or size)</p>';  
                 } else {
                     $flagSize = $this->checkFileSize($image['size'], 5, 5242880);
                     $flagExt = $this->checkFileExt($image['name'], ['jpg', 'png', 'jpeg', 'gif']);
                     if($flagExt && $flagExt) {
-                        $dir = '../../public/fileUpload/';
+                        $dir = '../public/fileUpload/';
                         $randomStr = substr( md5(time() *134), 0, 4);  // tránh upload trùng tên file
                         $imageArticle =  $randomStr .'-'. $image['name'];
                         move_uploaded_file($image['tmp_name'], $dir . $imageArticle);
                     } else {
-                        echo $errors['image'] = 'Check file size or extension';
+                        echo $errors['image'] = '<p class="errorField">Check your image (source, extension or size)</p>';
                     }
                 }  
                 

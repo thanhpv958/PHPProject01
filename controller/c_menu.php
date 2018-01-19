@@ -1,6 +1,5 @@
 <?php
     require_once '../model/m_menu.php';
-
     class c_menu {
 
         //  function recurSelectMenu($categories=NULL, $parent_id=0, $char=0) {
@@ -25,8 +24,8 @@
             }
         }
         function recurULMenu( $parent_id=0, $count=0) {
-            $M_admin = new M_admin();
-            $menu  = $M_admin->getCategories($parent_id);
+            $m_menu = new M_menu();
+            $menu  = $m_menu->getMenu($parent_id);
 
             if($menu) {
                 if($count == 0) {

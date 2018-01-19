@@ -1,11 +1,8 @@
 <?php 
- 
+    ob_start();
     require_once './header.php';
     require_once './sidebar.php'; 
     require_once '../controller/c_video.php';
-    
-  
-
 ?>
   <div class="row ">
     <div class="col-md-12">
@@ -13,8 +10,14 @@
             <?php
                 $id = $_GET['id'];
                 $c_video = new C_video();
-                $video = $c_video->getVideoByID($id);
-               
+                if(isset($_POST['title']) && isset($_POST['link']) && isset($_POST['status']) ) {
+                    $title = $_POST['title'];
+                    $link = $_POST['link'];
+                    $status = $_POST['status'];
+                    $c_video->editVideo($id, $title, $link, $status);
+                    ob_end_flush();
+                }   
+                $video = $c_video->getVideoByID($id); 
                 foreach($video as $key => $value)
                 {          
             ?>
@@ -32,13 +35,6 @@
                             <input type="text" class="form-control" id="link" name="link" value="<?php if(isset($value['link'])) echo $value['link'] ?>"> 
                             
                             <?php if(isset($errors['link'])) echo $errors['link']; ?>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="ordernum">Order number</label>
-                            <input type="number" class="form-control" id="ordernum" name="ordernum" value="<?php if(isset($value['ordernum'])) echo $value['ordernum'] ?>">    
-                            
-                            <?php if(isset($errors['ordernum'])) echo $errors['ordernum']; ?> 
                         </div>
 
                         <div class="form-group">

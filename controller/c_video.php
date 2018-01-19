@@ -101,9 +101,8 @@
             }
         }
 
-        public function editVideo($id, $title, $link, $ordernum, $status)
-        {
-            
+        public function editVideo($id, $title, $link, $status)
+        {   
             if( !isset($id) && filter_var($id, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1] ]) == false ) {
                 echo 'fail';
             } else {

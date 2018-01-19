@@ -9,7 +9,7 @@
             return $this->setQuery($query);
         }     
 
-        public function editVideo($id, $title, $link, $ordernum, $status)
+        public function editVideo($id, $title, $link, $status)
         {
             $query = "UPDATE video SET title='$title', link='$link', ordernum='$ordernum', onstatus='$status' WHERE id='$id'";
             return $this->setQuery($query);

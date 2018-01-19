@@ -104,14 +104,15 @@
                     }
 
                     if($imageEdit['size'] > 0) {
-                        $flagSize = $this->checkFileSize($imageEdit['size'], 5, 5242880);
-                        $flagExt = $this->checkFileExt($imageEdit['name'], ['jpg', 'png', 'jpeg', 'gif']);
+                        $c_process = new C_process();
+                        $flagSize = $c_process->checkFileSize($imageEdit['size'], 5, 5242880);
+                        $flagExt = $c_process->checkFileExt($imageEdit['name'], ['jpg', 'png', 'jpeg', 'gif']);
                         if($flagSize && $flagExt) {
-                            $dir = '../../public/fileUpload/';
+                            $dir = '../public/fileUpload/';
                             $randomStr = substr( md5(time() *134), 0, 4);  // tránh upload trùng tên file
                             $imageSlider =  $randomStr .'-'. $imageEdit['name'];
                             move_uploaded_file($imageEdit['tmp_name'], $dir . $imageSlider);
-                            unlink('../../public/fileUpload/' . $image);
+                            unlink('../public/fileUpload/' . $image);
                         } else {
                             die('Check file size or extension');
                         }
@@ -120,8 +121,8 @@
                     }
                    
                     if(empty($errors)) {
-                        $m_admin = new M_admin();
-                        $m_admin->editSlider($id, $title, $imageSlider, $link, $ordernum, $status);
+                        $editSlider = new M_slider();
+                        $editSlider->editSlider($id, $title, $imageSlider, $link, $ordernum, $status);
                         header('location: ../admin/listSlider.php');
                         return;
                     }

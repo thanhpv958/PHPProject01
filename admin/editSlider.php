@@ -9,8 +9,7 @@
       <div class="edit-slider">
             <?php
                 $id = $_GET['id'];
-                
-                //process
+                $c_slider = new C_slider();
                 if(isset($_POST['title']) && isset($_FILES['imageEdit']) && isset($_POST['link']) && isset($_POST['ordernum']) && isset($_POST['status']) ) {
                     $title = $_POST['title'];
                     $image = $_POST['image'];
@@ -18,15 +17,12 @@
                     $link = $_POST['link'];
                     $ordernum = $_POST['ordernum'];
                     $status = $_POST['status'];
-
-                    $c_slider = new C_slider();
                     $c_slider->editSlider($id, $title, $image, $imageEdit, $link, $ordernum, $status);
                     ob_end_flush();
                 }   
 
                 // get data
-                $slider = $C_admin->getSliderByID($id);
-               
+                $slider = $c_slider->getSliderByID($id);
                 foreach($slider as $key => $value)
                 {          
             ?>
@@ -43,7 +39,7 @@
 
                         <div class="form-group">
                             <label for="imageEdit">Image</label>
-                            <img style="width: 100px; height: 50px;display:block" src="../../public/fileUpload/<?php if(isset($value['imageSlider'])) echo $value['imageSlider'] ?>" alt="">
+                            <img style="width: 100px; height: 50px;display:block" src="../public/fileUpload/<?php if(isset($value['imageSlider'])) echo $value['imageSlider'] ?>" alt="">
                             <input type="hidden" class="form-control" id="image" name="image" value="<?php if(isset($value['imageSlider'])) echo $value['imageSlider'] ?>">     
                             <input type="file" class="form-control" id="imageEdit" name="imageEdit" >      
                         </div>

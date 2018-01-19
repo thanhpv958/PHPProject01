@@ -1,7 +1,6 @@
 <?php require_once './header.php';
     require_once './sidebar.php'; 
-    require_once '../controller/c_admin.php';
-
+    require_once '../controller/c_user.php';
 ?>
     
     <div class="row">
@@ -22,36 +21,35 @@
                     </thead>
                     <tbody>
                         <?php
-                                $C_admin = new C_admin();
-                                $listUser = $C_admin->getAllUser();
-                                foreach($listUser as $value)
+                                $c_user = new c_user();
+                                $listUser = $c_user->getAllUser();
+                                foreach($listUser as $user)
                                 {
                             ?>
                             <tr>
-                                <td><?php echo $value['id'] ?></td>
-                                <td><?php echo $value['username'] ?></td>
-                                <td><?php echo $value['password'] ?></td>
-                                <td><?php echo $value['email'] ?></td>
+                                <td><?php echo $user['id'] ?></td>
+                                <td><?php echo $user['username'] ?></td>
+                                <td><?php echo $user['password'] ?></td>
+                                <td><?php echo $user['email'] ?></td>
                                 <td class="text-center">
                                     <?php
-                                        if($value['status'] == 1) {
+                                        if($user['status'] == 1) {
                                             echo 'Active';
                                         } else {
                                             echo 'Deactive';
                                         }
                                     ?>
                                 </td>
-                                <td class="text-center"><a href="./editSlider.php?id=<?php echo $value['id']?>"><i class="fa fa-pencil-square-o"></i></a> </td>
-                                <td class="text-center"><a href="./deleteUser.php?id=<?php echo $value['id']?>"><i class="fa fa-minus"></i></a> </td>
+                                <td class="text-center"><a href="./editUser.php?id=<?php echo $user['id']?>"><i class="fa fa-pencil-square-o"></i></a> </td>
+                                <td class="text-center"><a href="./deleteUser.php?id=<?php echo $user['id']?>"><i class="fa fa-minus"></i></a> </td>
                             </tr>
 
                             <?php
                                 }
                         ?>
-                        
                     </tbody>
                 </table>
-                <a href="./addSlider.php" class="btn btn-success">Add User</a>
+                <a href="./addUser.php" class="btn btn-success">Add User</a>
                
             </div>
         </div>
