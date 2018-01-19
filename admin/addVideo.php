@@ -2,7 +2,7 @@
     ob_start();
     require_once './header.php';
     require_once './sidebar.php'; 
-    require_once '../controller/c_admin.php';
+    require_once '../controller/c_video.php';
 
 ?>
   <div class="row ">
@@ -10,8 +10,8 @@
       <div class="add-video">
         <?php
             if(isset($_POST['title']) && isset($_POST['link']) && isset($_POST['ordernum']) && isset($_POST['status']) ) {
-                $C_admin = new C_admin();
-                $C_admin->addVideo($_POST['title'], $_POST['link'], $_POST['ordernum'], $_POST['status']);
+                $c_video = new C_video();
+                $c_video->addVideo($_POST['title'], $_POST['link'], $_POST['ordernum'], $_POST['status']);
                 ob_end_flush();
             }   
         ?>

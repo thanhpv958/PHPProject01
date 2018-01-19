@@ -25,21 +25,21 @@
                         <?php
                                 $page = isset($_GET['page']) ? $_GET['page'] : 1;
                                 $c_article = new C_article();
-                                $c_article->configPagination($page);
+                                $c_article->configPagination($page, 'listArticle');
                                 $listArticle = $c_article->getAllArticleP();
-                                foreach($listArticle as $key => $value)
+                                foreach($listArticle as $key => $article)
                                 {
                             ?>
                             <tr>
-                                <td><?php echo $value['id'] ?></td>
-                                <td class="text-left"><?php echo $value['title'] ?></td>
-                                <td><?php echo $value['category'] ?></td>
-                                <td><img  style="width: 100px; height: 50px;" src="../../public/fileUpload/<?php echo $value['image']?>" alt="slider image" ></td>
-                                <td><?php echo $value['time'] ?></td>
-                                <td><?php echo $value['view'] ?></td>
+                                <td><?php echo $article['id'] ?></td>
+                                <td class="text-left"><?php echo $article['title'] ?></td>
+                                <td><?php echo $article['category'] ?></td>
+                                <td><img  style="width: 100px; height: 50px;" src="../public/fileUpload/<?php echo $article['image']?>" alt="slider image" ></td>
+                                <td><?php echo $article['time'] ?></td>
+                                <td><?php echo $article['view'] ?></td>
                                 <td class="text-center">
                                     <?php
-                                        if($value['status'] == 1) {
+                                        if($article['status'] == 1) {
                                             echo 'Show';
                                         } else {
                                             echo 'Hidden';
@@ -49,11 +49,9 @@
                                 <td class="text-center"><a href="./editSlider.php?id=<?php echo $value['id']?>"><i class="fa fa-pencil-square-o"></i></a> </td>
                                 <td class="text-center"><a href="./deleteSlider.php?id=<?php echo $value['id']?>"><i class="fa fa-minus"></i></a> </td>
                             </tr>
-
-                            <?php
-                                }
+                        <?php
+                            }
                         ?>
-                        
                     </tbody>
                 </table>
                 <div class="abc">

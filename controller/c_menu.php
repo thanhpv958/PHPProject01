@@ -1,5 +1,4 @@
 <?php
-    require_once '../model/m_admin.php';
     require_once '../model/m_menu.php';
 
     class c_menu {
@@ -16,9 +15,8 @@
         //     } 
         // }
         function recurSelectMenu($parent_id=0, $char='-') {
-            $M_admin = new M_admin();
-            $menu  = $M_admin->getCategories($parent_id);
-
+            $m_menu = new M_menu();
+            $menu  = $m_menu->getMenu($parent_id);
             if($menu) {               
                     foreach($menu as $key => $value) {
                         echo "<option value='".$value['id']."'>".$char.$value['title']."</option>"; 
@@ -26,7 +24,7 @@
                     }        
             }
         }
-        function recurULMenu($parent_id=0, $count=0) {
+        function recurULMenu( $parent_id=0, $count=0) {
             $M_admin = new M_admin();
             $menu  = $M_admin->getCategories($parent_id);
 
@@ -36,7 +34,7 @@
                 }
                 echo '<ul class="navbar-nav">';
                     foreach($menu as $key => $value) {
-                        echo "<li class='nav-item'><a class='nav-link' href=''>".$value['title']."</a>";
+                        echo "<li class='nav-item'><a class='nav-link' href='../views/articleCat.php?cat=".$value['id']."'>".$value['title']."</a>";
                         $this->recurULMenu($value['id'], ++$count);
                         echo "</li>";
                     }

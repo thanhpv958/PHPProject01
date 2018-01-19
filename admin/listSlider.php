@@ -1,6 +1,6 @@
 <?php require_once './header.php';
     require_once './sidebar.php'; 
-    require_once '../controller/c_admin.php';
+    require_once '../controller/c_slider.php';
 
 ?>
     <div class="row">
@@ -21,15 +21,15 @@
                     </thead>
                     <tbody>
                         <?php
-                                $C_admin = new C_admin();
-                                $listSlider = $C_admin->getAllSlider();
+                                $c_slider = new C_slider();
+                                $listSlider = $c_slider->getAllSlider();
                                 foreach($listSlider as $key => $value)
                                 {
                             ?>
                             <tr>
                                 <td><?php echo $value['id'] ?></td>
                                 <td><?php echo $value['title'] ?></td>
-                                <td><img  style="width: 100px; height: 50px;" src="../../public/fileUpload/<?php echo $value['imageSlider']?>" alt="slider image" ></td>
+                                <td><img  style="width: 100px; height: 50px;" src="../public/fileUpload/<?php echo $value['imageSlider']?>" alt="slider image" ></td>
                                 <td><?php echo $value['link'] ?></td>
                                 <td class="text-center">
                                     <?php

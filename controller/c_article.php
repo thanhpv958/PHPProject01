@@ -1,10 +1,10 @@
 <?php
     require_once '../model/m_article.php';
-    require_once '../controller/c_admin.php';
+    require_once '../controller/c_process.php';
     require_once '../controller/c_pagination.php';
-    class C_article extends C_admin  {
+    class C_article extends C_process  {
 
-        protected $configP;
+        private $configP;
 
         function addArticle($title, $body, $category, $image, $time, $status) {
             $errors = [];
@@ -49,15 +49,15 @@
 
        
 
-        public function configPagination($page) {
+        public function configPagination($page, $linkPage) {
             if( filter_var($page, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1] ]) == false ) {
                 die('Fail. Please check infomation or contact admin');
             } else {
                 $this->configP = [
                     'current_page'  => $page, 
                     'limit'         => 6, 
-                    'link_full'     => 'listArticle.php?page={page}',
-                    'link_first'    => 'listArticle.php',
+                    'link_full'     => "$linkPage.php?page={page}",
+                    'link_first'    => "$linkPage.php",
                     'tableName'         => 'article'
                 ];
             }

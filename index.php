@@ -28,8 +28,7 @@ require_once '../controller/c_article.php';
                     </div>
                 </div>
             <?php
-                }
-                
+                }  
             ?>
         </div>
        

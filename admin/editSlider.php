@@ -2,14 +2,14 @@
     ob_start();
     require_once './header.php';
     require_once './sidebar.php'; 
-    require_once '../controller/c_admin.php';
+    require_once '../controller/c_slider.php';
 ?>
   <div class="row ">
     <div class="col-md-12">
       <div class="edit-slider">
             <?php
                 $id = $_GET['id'];
-                $C_admin = new C_admin();
+                
                 //process
                 if(isset($_POST['title']) && isset($_FILES['imageEdit']) && isset($_POST['link']) && isset($_POST['ordernum']) && isset($_POST['status']) ) {
                     $title = $_POST['title'];
@@ -18,7 +18,9 @@
                     $link = $_POST['link'];
                     $ordernum = $_POST['ordernum'];
                     $status = $_POST['status'];
-                    $C_admin->editSlider($id, $title, $image, $imageEdit, $link, $ordernum, $status);
+
+                    $c_slider = new C_slider();
+                    $c_slider->editSlider($id, $title, $image, $imageEdit, $link, $ordernum, $status);
                     ob_end_flush();
                 }   
 

@@ -2,7 +2,7 @@
     ob_start();
     require_once './header.php';
     require_once './sidebar.php'; 
-    require_once '../controller/c_admin.php';
+    require_once '../controller/c_slider.php';
 
 ?>
   <div class="row ">
@@ -17,8 +17,8 @@
                 $ordernum = $_POST['ordernum'];
                 $status = $_POST['status'];
 
-                $C_admin = new C_admin();
-                $C_admin->addSlider($title, $image,  $link, $ordernum, $status);
+                $c_slider = new C_slider();
+                $c_slider->addSlider($title, $image,  $link, $ordernum, $status);
                 ob_end_flush();
             }   
         ?>

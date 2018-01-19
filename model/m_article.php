@@ -1,5 +1,5 @@
 <?php
-    require_once '../../config/database.php';
+    require_once '../config/database.php';
 
     class M_article extends Database {
         

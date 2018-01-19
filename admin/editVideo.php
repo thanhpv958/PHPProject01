@@ -2,7 +2,7 @@
  
     require_once './header.php';
     require_once './sidebar.php'; 
-    require_once '../controller/c_admin.php';
+    require_once '../controller/c_video.php';
     
   
 
@@ -12,15 +12,13 @@
       <div class="edit-video">
             <?php
                 $id = $_GET['id'];
-                $C_admin = new C_admin();
-                $video = $C_admin->getVideoByID($id);
+                $c_video = new C_video();
+                $video = $c_video->getVideoByID($id);
                
                 foreach($video as $key => $value)
                 {          
             ?>
                     <h3>Edit Video: <?php echo $value['title'] ?></h3>
-
-                    <?php if(isset($messageSuccess)) echo $messageSuccess ?>
 
                     <form method="POST">  
                         <div class="form-group">
@@ -55,7 +53,7 @@
             <?php
                 }
             ?>
-          <input type="submit" class="btn btn-primary" value="Add Video">
+          <input type="submit" class="btn btn-primary" value="Save Video">
         </form>
       </div>
     </div>

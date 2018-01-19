@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(isset($_SESSION['uid']))
+    if(isset($_SESSION['username']))
         header('location: ./index.php'); 
 ?>
 
@@ -10,10 +10,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../public/css/style.css">
-    <link rel="shortcut icon" href="../../public/img/admin-favicon.png">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="shortcut icon" href="../public/img/admin-favicon.png">
     <title>User Login</title>
 </head>
 <body>
@@ -31,10 +31,10 @@
                             <div class="card rounded-0">
                                 <div class="card-header">
                                     <?php
-                                        require_once '../controller/c_admin.php';
+                                        require_once '../controller/c_user.php';
                                         if( isset($_POST['username']) && isset($_POST['password']) ) {
-                                            $C_admin = new C_admin();
-                                            $C_admin->userLogin($_POST['username'], $_POST['password']);  
+                                            $c_user = new C_user();
+                                            $c_user->userLogin($_POST['username'], $_POST['password']);  
                                         }
                                     ?>
                                     <h3 class="pb-0">Login</h3>

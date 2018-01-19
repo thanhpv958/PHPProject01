@@ -28,16 +28,11 @@
         }
         public function loaddAllRows()
         {
-            $result = [] ;
+            $result  = [];
             if(mysqli_num_rows($this->query) > 0)
-            {
-                while($rows = mysqli_fetch_assoc($this->query))
-                {
-                    $result[] = $rows;
-                }
-                
-            }
-            return $result;
+                while($row = mysqli_fetch_assoc($this->query))
+                    $result[] = $row;
+            return $result;          
         }
 
        
