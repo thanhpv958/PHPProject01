@@ -1,6 +1,7 @@
 <?php
 require_once './header.php';
 require_once '../controller/c_article.php';
+require_once '../controller/c_process.php';
 
 ?>
     <div class="container">
@@ -21,7 +22,8 @@ require_once '../controller/c_article.php';
                             <p class="card-text">
                                 <?php
                                     $stripBody = strip_tags($article['body']);
-                                    echo $c_article->subString($stripBody,0, 250);
+                                    $c_process = new C_process();
+                                    echo $c_process->subString($stripBody,0, 250);
                                 ?>
                             </p>
                         </div>             

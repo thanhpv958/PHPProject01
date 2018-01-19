@@ -72,5 +72,7 @@
     </div>
   </div>
 
+<script src="../lib/ckeditor/ckeditor.js"></script>
+<script src="../lib/ckfinder/ckfinder.js"></script>
 
 <?php require_once './footer.php' ?>

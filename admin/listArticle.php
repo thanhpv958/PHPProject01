@@ -46,8 +46,8 @@
                                         }
                                     ?>
                                 </td>
-                                <td class="text-center"><a href="./editSlider.php?id=<?php echo $value['id']?>"><i class="fa fa-pencil-square-o"></i></a> </td>
-                                <td class="text-center"><a href="./deleteSlider.php?id=<?php echo $value['id']?>"><i class="fa fa-minus"></i></a> </td>
+                                <td class="text-center"><a href="./editArticle.php?id=<?php echo $article['id']?>"><i class="fa fa-pencil-square-o"></i></a> </td>
+                                <td class="text-center"><a href="./deleteArticle.php?id=<?php echo $article['id']?>"><i class="fa fa-minus"></i></a> </td>
                             </tr>
                         <?php
                             }

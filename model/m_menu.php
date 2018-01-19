@@ -12,5 +12,17 @@
             $this->setQuery($query);
             return $this->loaddAllRows();
         }
+
+        function getMenuArticle($title) {
+            $query = "SELECT * FROM menu WHERE title='$title'";
+            $this->setQuery($query);
+            return $this->loaddAllRows();
+        }
+
+        function getMenuArticleRemain($title) {
+            $query = "SELECT * FROM menu WHERE title!='$title'";
+            $this->setQuery($query);
+            return $this->loaddAllRows();
+        }
     }
 ?>

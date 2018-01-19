@@ -13,15 +13,27 @@
         //         $this->recurSelectMenu($categories, $item['id'], ++$char);
         //     } 
         // }
-        function recurSelectMenu($parent_id=0, $char='-') {
+        function recurSelectMenu($parent_id=0, $char='') {
             $m_menu = new M_menu();
             $menu  = $m_menu->getMenu($parent_id);
             if($menu) {               
                     foreach($menu as $key => $value) {
                         echo "<option value='".$value['id']."'>".$char.$value['title']."</option>"; 
-                        $this->recurSelectMenu($value['id'], '--');                   
+                        $this->recurSelectMenu($value['id'], '-');                   
                     }        
             }
+        }
+
+        function recurSelectMenuArticle($nameCat) {
+            $m_menu = new M_menu();
+            $menuArticle  = $m_menu->getMenuArticle($nameCat);
+            echo "<option value='".$menuArticle[0]['id']."'>".$menuArticle[0]['title']."</option>"; 
+
+            $menuRemain = $m_menu->getMenuArticleRemain($nameCat);
+            foreach($menuRemain as $value) {
+                echo "<option value='".$value['id']."'>".$char.$value['title']."</option>"; 
+            }
+            
         }
         function recurULMenu( $parent_id=0, $count=0) {
             $m_menu = new M_menu();
@@ -41,12 +53,6 @@
             }
         }
 
-        // function showSelectMenu($name, $class) {
-        //     echo "<select name='".$name."' class='".$class."'>";
-        //     echo "<option value='0'>Danh mục cha</option>";
-        //     $this->recurSelectMenu();
-        //     echo "</select>";
-        // }
 
         function addMenu($title, $parent_id, $link, $status) {
             $errors = [];
