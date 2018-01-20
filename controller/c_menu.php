@@ -40,11 +40,18 @@
             $menu  = $m_menu->getMenu($parent_id);
 
             if($menu) {
-                if($count == 0) {
-                    echo '<ul class="navbar-nav ml-auto">';
-                }
-                echo '<ul class="navbar-nav">';
+                // if($count == 0) {
+                //     echo "<ul class='navbar-nav ml-auto'>";
+                //     echo "<li class='nav-item'><a class='nav-link' href='index.php'>Home</a></li>";
+                //     echo "</ul>";
+                // }
+                echo '<ul class="navbar-nav ml-auto">';
                     foreach($menu as $key => $value) {
+
+                        if($count == 0) {
+                            echo "<li class='nav-item'><a class='nav-link' href='index.php'>Home</a></li>";
+                        }
+                        
                         echo "<li class='nav-item'><a class='nav-link' href='../views/articleCat.php?cat=".$value['id']."'>".$value['title']."</a>";
                         $this->recurULMenu($value['id'], ++$count);
                         echo "</li>";

@@ -1,1 +1,10 @@
 @import 'header';
+
+img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+
+.nounderline {
+    text-decoration: none !important;
+}

@@ -77,5 +77,10 @@
             return $m_pagination->pagination($this->_config['tableName'], $this->start, $this->_config['limit']);  
         }
 
+        public function getArticleByCat($catID) {
+            $m_pagination = new M_pagination();
+            return $m_pagination->paginationArticleCat($this->_config['tableName'], $this->start, $this->_config['limit'], $catID);  
+        }
+
     }
 ?>

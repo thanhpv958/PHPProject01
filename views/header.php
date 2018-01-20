@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../public/css/site/style.css">
     <link rel="shortcut icon" href="../public/img/admin-favicon.png">
-    <title>ADMINISTRATOR - ThanhPhan</title>
+    <title>PHPProject01 - ThanhPhan</title>
 </head>
 <body>
     <div class="container-fluid">

@@ -36,9 +36,9 @@
                     $body = htmlspecialchars($body);
                 } 
                 // category
-                $m_article = new M_article();
-                $resultQueryCat = $m_article->showNameCategory($category);
-                $category = $resultQueryCat[0]['title'];
+                // $m_article = new M_article();
+                // $resultQueryCat = $m_article->showNameCategory($category);
+                // $category = $resultQueryCat[0]['title'];
                 
 
                 if( $image['size'] < 0 ) {
@@ -76,6 +76,25 @@
             } else {
                 $m_process = new M_process();
                 return $m_process->getDataByID('article', $id);
+            }
+        }
+
+        // public function getArticleByCat($id) {
+        //     if( filter_var($id, FILTER_VALIDATE_INT) == false) {
+        //         header('location: ../admin/listArticle.php');
+        //     } else {
+        //         $m_article = new M_article();
+        //         return $m_article->getArticleByCat($id);
+        //     }
+        // }
+
+        public function getArticleByCat($id) {
+            if( filter_var($id, FILTER_VALIDATE_INT) == false) {
+                header('location: ../admin/listArticle.php');
+            } else {
+                $c_pagination = new C_pagination();
+                $c_pagination->init($this->configP);
+                return $c_pagination->getArticleByCat($id);
             }
         }
 
@@ -146,6 +165,12 @@
                 }
                 return header('location: ../admin/listArticle.php');      
             }
+        }
+
+        function showNameCategory($id) {
+          $m_article = new M_article();
+          $nameCat = $m_article->showNameCategory($id);
+          return $nameCat[0]['title'];
         }
 
     }

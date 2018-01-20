@@ -33,7 +33,11 @@
                             <tr>
                                 <td><?php echo $article['id'] ?></td>
                                 <td class="text-left"><?php echo $article['title'] ?></td>
-                                <td><?php echo $article['category'] ?></td>
+                                <td>
+                                    <?php 
+                                        echo $c_article->showNameCategory($article['category']);  
+                                    ?>
+                                </td>
                                 <td><img  style="width: 100px; height: 50px;" src="../public/fileUpload/<?php echo $article['image']?>" alt="slider image" ></td>
                                 <td><?php echo $article['time'] ?></td>
                                 <td><?php echo $article['view'] ?></td>

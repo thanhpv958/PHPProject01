@@ -13,7 +13,11 @@
             return $this->loaddAllRows();
         }
 
-    
+        public function paginationArticleCat($tableName, $start, $limit, $catID) {
+            $query = "SELECT * FROM $tableName WHERE category='$catID' ORDER BY id DESC LIMIT $start, $limit";
+            $this->setQuery($query);
+            return $this->loaddAllRows();
+        }
         
     }
 ?>

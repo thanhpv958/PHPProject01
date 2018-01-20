@@ -4,7 +4,7 @@
     class M_article extends Database {
         
         function showNameCategory($id) {
-            $query = "SELECT * FROM menu WHERE id='$id'";
+            $query = "SELECT title FROM menu WHERE id='$id'";
             $this->setQuery($query);
             return $this->loaddAllRows();
         }
@@ -17,6 +17,12 @@
         function editArticle($id, $title, $body, $category, $image, $status) {
             $query = "UPDATE article SET title='$title', body='$body',  category='$category', image='$image', status=$status WHERE id=$id";
             return $this->setQuery($query);
+        }
+
+        function getArticleByCat($catID) {
+            $query = "SELECT * FROM article WHERE category=$catID";
+            $this->setQuery($query);
+            return $this->loaddAllRows();
         }
     }
 ?>

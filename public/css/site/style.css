@@ -14,4 +14,11 @@
         .header ul li ul li a:hover {
           background-color: red; }
 
+img {
+  max-width: 100% !important;
+  height: auto !important; }
+
+.nounderline {
+  text-decoration: none !important; }
+
 /*# sourceMappingURL=style.css.map */
