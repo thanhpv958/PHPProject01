@@ -1,6 +1,7 @@
 <?php
     require_once 'c_pagination.php';
     require_once '../model/m_process.php';
+    require_once '../controller/c_excel.php';
     require_once '../model/m_video.php';
     class C_video extends C_pagination{
 
@@ -111,6 +112,40 @@
                 header('location: ./listVideo.php'); 
                 return;
             }
+        }
+
+        public function exportExcelVideo() {
+            $output = '
+                <table class="table" border="1">
+                    <thead>
+                        <tr>
+                            <th colspan="4">Danh sách video</th>
+                        </tr>           
+                        <tr>
+                            <th>Title</th>
+                            <th>Link</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+            ';
+
+            $c_excel = new C_excel();
+            $listVideo = $c_excel->exportExcel('video');
+            $output .= '<tbody>';
+            foreach ($listVideo as  $video) {
+                $output .= '
+                    <tr>
+                        <td>'.$video['title'].'</td>
+                        <td>'.$video['link'].'</td>
+                        <td>'.$video['onstatus'].'</td>
+                    </tr>    
+                ';
+            }
+            $output .= '</tbody>';
+            $output .= '</table>';
+            header('Content-type: application/xls');
+            header('Content-Disposition: attachment; filename=listVideo.xls');
+            echo $output;
         }
     }
     

@@ -55,8 +55,8 @@
                 <?php
                     
                     echo $c_video->showPagination();
-                   
                 ?>
+                <a href="./exportVideo.php" class="btn btn-success" >Export Excel</a>
             </div>
         </div>
     </div>

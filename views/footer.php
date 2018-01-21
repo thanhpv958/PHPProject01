@@ -5,7 +5,7 @@
     <!-- end container -->
 
     <div class="container-fluid">
-        <div class="footer text-center">
+        <div class="footer text-center mt-sm-4">
             <p>Design by <a href="#">Thanh Phan</a></p>
         </div>
     </div>
