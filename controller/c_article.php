@@ -79,6 +79,11 @@
             }
         }
 
+        public function getRandArticle() {
+            $m_article = new M_article();
+            return $m_article->getRandArticle();
+        }
+
         // public function getArticleByCat($id) {
         //     if( filter_var($id, FILTER_VALIDATE_INT) == false) {
         //         header('location: ../admin/listArticle.php');

@@ -13,14 +13,14 @@
             return $this->loaddAllRows();
         }
 
-        function getMenuArticle($title) {
-            $query = "SELECT * FROM menu WHERE title='$title'";
+        function getMenuArticle($catID) {
+            $query = "SELECT * FROM menu WHERE id=$catID";
             $this->setQuery($query);
             return $this->loaddAllRows();
         }
 
-        function getMenuArticleRemain($title) {
-            $query = "SELECT * FROM menu WHERE title!='$title'";
+        function getMenuArticleRemain($catID) {
+            $query = "SELECT * FROM menu WHERE id!=$catID";
             $this->setQuery($query);
             return $this->loaddAllRows();
         }

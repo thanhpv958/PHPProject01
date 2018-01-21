@@ -24,14 +24,14 @@
             }
         }
 
-        function recurSelectMenuArticle($nameCat) {
+        function recurSelectMenuArticle($catID) {
             $m_menu = new M_menu();
-            $menuArticle  = $m_menu->getMenuArticle($nameCat);
+            $menuArticle  = $m_menu->getMenuArticle($catID);
             echo "<option value='".$menuArticle[0]['id']."'>".$menuArticle[0]['title']."</option>"; 
 
-            $menuRemain = $m_menu->getMenuArticleRemain($nameCat);
+            $menuRemain = $m_menu->getMenuArticleRemain($catID);
             foreach($menuRemain as $value) {
-                echo "<option value='".$value['id']."'>".$char.$value['title']."</option>"; 
+                echo "<option value='".$value['id']."'>".$value['title']."</option>"; 
             }
             
         }

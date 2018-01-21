@@ -24,5 +24,11 @@
             $this->setQuery($query);
             return $this->loaddAllRows();
         }
+
+        function getRandArticle() {
+            $query = "SELECT * FROM article ORDER BY RAND() LIMIT 0, 5";
+            $this->setQuery($query);
+            return $this->loaddAllRows();
+        }
     }
 ?>
