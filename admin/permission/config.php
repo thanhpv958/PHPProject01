@@ -2,7 +2,7 @@
     $arrPermission = [
         'menu' => [
             'title' => 'Menu',
-            'linkTitle' => 'listMenu.php',
+            'linkTitle' => 'addMenu.php',
             'titleC1' => NULL,
             'titleC2' => NULL,
             'link_list' => 'listMenu.php',

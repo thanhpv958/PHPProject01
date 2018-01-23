@@ -48,16 +48,17 @@
             <div class="col-sm-4 mt-sm-4">
 
                 <!-- seach -->
-                <div class="search">
+                <!-- <div class="search">
                     <div class="card">
                         <div class="card-body">
-                            <form class="form-inline" action="">
-                                <input class="form-control mr-sm-1" type="text" placeholder="Search">
-                                <button class="btn btn-danger" type="submit">Search</button>
+                            <form class="form-inline">
+                                <input class="form-control mr-sm-1" type="text" name="search_text" id="search_text" placeholder="Search">  
                             </form>
+                            <div id="resultSearch">
+                            </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <!-- end seach -->
 
                  <!-- other post -->
@@ -84,3 +85,34 @@
     require_once './footer.php';
     }
 ?>
+
+<!-- <script>
+    $(function() {
+        var search = $(location).attr('search');
+        var idGET = search.substr(4,5);
+
+        $('#search_text').keyup(function() {
+            var txtSearch = $(this).val();
+            
+            if(txtSearch != '') {
+
+                $.ajax({
+                    url: '../controller/c_search.php',
+                    method: 'POST',
+                    data: {
+                        txtSearch:txtSearch,
+                        idGET: idGET
+              
+                    },
+                    dataType: 'text',
+                    success: function(result) {
+                        $('#resultSearch').html(result);
+                    }
+                });
+
+            } else {
+                $('#resultSearch').html('');
+            } 
+        })
+    })
+</script> -->

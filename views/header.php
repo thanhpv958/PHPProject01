@@ -8,8 +8,37 @@
     <link rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../public/css/site/style.css">
+    <script src="../lib/bootstrap/jquery.min.js"></script>
     <link rel="shortcut icon" href="../public/img/admin-favicon.png">
     <title>PHPProject01 - ThanhPhan</title>
+    <script>
+        $(function() {
+            $('#search_text').keyup(function() {
+                var txtSearch = $(this).val();      
+                if(txtSearch != '') {
+                    $.ajax({
+                        url: '../controller/c_search.php',
+                        method: 'POST',
+                        data: {
+                            txtSearch:txtSearch, 
+                        },
+                        dataType: 'text',
+                        success: function(result) {
+                            $('#suggesstion-box').html(result);
+                        }
+                    });
+                } else {
+                    $('#suggesstion-box').html('');
+                } 
+            })
+        })
+        // dùng autocomplete
+        // $(function() {
+        //     $('#search_text').autocomplete({
+        //         source: '../controller/c_search.php'
+        //     })
+        // })
+     </script>
 </head>
 <body>
     <div class="container-fluid">
@@ -28,8 +57,14 @@
                             ?>
                             
                         </div>
+                        <div class="frmSearch">
+                             <input class="form-control mr-sm-1" value='' type="text" name="search_text" id="search_text" placeholder="Search">   
+                             <div id="suggesstion-box"></div>
+                        </div>
                     </div>
                 </nav>
+               
+               </div>
                 <!-- <div id="carouselId" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
                         <li data-target="#carouselId" data-slide-to="0" class="active"></li>
@@ -56,5 +91,6 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div> -->
-            </div> <!-- end header -->
-    </div> <!-- end container -->
+            </div> <!-- end header -->  
+        </div>
+    </div> <!-- end container -->   

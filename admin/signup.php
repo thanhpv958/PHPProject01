@@ -40,9 +40,7 @@
                                             if($C_admin->userSignup($_POST['email'], $_POST['username'], $_POST['password'], $_POST['repassword'])) {
                                                 $_POST['email'] = "";
                                                 $_POST['username'] = "";
-                                            }; 
-                                           
-                                            
+                                            };                                                                        
                                         }
                                     ?>
                                 </div>

@@ -58,9 +58,14 @@
             return $m_process->selectFromTable('user');    
         }
 
+        public function getUserByID($id) {
+            $m_process = new M_process();
+            return $m_process->getDataByID('user', $id);   
+        }
+
         public function deleteUserById($id)
         {
-            if( !isset($id) && filter_var($id, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1] ]) == false ) {
+            if(filter_var($id, FILTER_VALIDATE_INT, ['options' => ['min_range' => 1] ]) == false ) {
                 echo 'FAIL';
             } else {
                 $m_process = new M_process();
@@ -68,6 +73,10 @@
                 header('location: ../admin/listUser.php');
                 return;
             }
+        }
+
+        public function editUser($id) {
+             
         }
     }
 ?>

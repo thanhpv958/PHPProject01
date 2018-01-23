@@ -25,5 +25,11 @@
             $this->setQuery($query);
             return $this->loaddAllRows();
         }
+
+        public function editUser($id, $email, $username, $password)
+        {
+            $query = "UPDATE user SET email='$email', username='$username', status='$status' WHERE id='$id'";
+            return $this->setQuery($query);
+        }
     }
 ?>
