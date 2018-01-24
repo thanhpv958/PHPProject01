@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-sm-2">
             <!-- start sidebar -->
             <div class="sidebar">
                 <ul class="menu">
@@ -18,7 +18,7 @@
                                 <i class="fa fa-pencil"></i> <?php echo $value['title'];?></a>
                             <ul class="sub-menu">
                                 <?php
-                                    if($value['titleC1'] != NULL && $value['titleC2'] != NULL)
+                                    if($value['titleC1'] != '0' && $value['titleC2'] != '0')
                                     {
                                 ?>
                                         <li>
@@ -44,5 +44,5 @@
         </div>
         <!-- end col -->
 
-        <div class="col-md-10">
+        <div class="col-sm-10">
       

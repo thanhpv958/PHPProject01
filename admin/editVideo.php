@@ -5,7 +5,7 @@
     require_once '../controller/c_video.php';
 ?>
   <div class="row ">
-    <div class="col-md-12">
+    <div class="col-sm-12">
       <div class="edit-video">
             <?php
                 $id = $_GET['id'];

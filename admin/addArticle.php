@@ -5,7 +5,7 @@
 ?>
 
   <div class="row ">
-    <div class="col-md-12">
+    <div class="col-sm-12">
       <div class="add-video">
         <?php
             if(isset($_POST['title']) && isset($_POST['bodyArticle']) && isset($_POST['category']) && isset($_FILES['image']) && isset($_POST['time']) && isset($_POST['status']) ) {

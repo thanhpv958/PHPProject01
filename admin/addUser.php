@@ -6,7 +6,7 @@
 
 ?>
 <div class="row ">
-    <div class="col-md-12">
+    <div class="col-sm-12">
         <div class="add-video">
         <?php
             require_once '../controller/c_user.php';

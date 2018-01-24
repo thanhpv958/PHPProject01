@@ -5,7 +5,7 @@
     require_once '../controller/c_slider.php';
 ?>
   <div class="row ">
-    <div class="col-md-12">
+    <div class="col-sm-12">
       <div class="edit-slider">
             <?php
                 $id = $_GET['id'];

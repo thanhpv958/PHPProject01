@@ -58,7 +58,7 @@
                             
                         </div>
                         <div class="frmSearch">
-                             <input class="form-control mr-sm-1" value='' type="text" name="search_text" id="search_text" placeholder="Search">   
+                             <input class="form-control mr-sm-1" value='' type="text" name="search_text" id="search_text" placeholder="Search" autocomplete='off'>   
                              <div id="suggesstion-box"></div>
                         </div>
                     </div>

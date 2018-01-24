@@ -3,8 +3,8 @@
         'menu' => [
             'title' => 'Menu',
             'linkTitle' => 'addMenu.php',
-            'titleC1' => NULL,
-            'titleC2' => NULL,
+            'titleC1' => '0',
+            'titleC2' => '0',
             'link_list' => 'listMenu.php',
             'link_add' => 'addMenu.php',
             'link_edit' => 'editMenu.php',
@@ -25,8 +25,8 @@
         'slider' => [
             'title' => 'Slider',
             'linkTitle' => 'listSlider.php',
-            'titleC1' => NULL,
-            'titleC2' => NULL,
+            'titleC1' => '0',
+            'titleC2' => '0',
             'link_list' => 'listSlider.php',
             'link_add' => 'addSlider.php',
             'link_edit' => 'editSlider.php',
@@ -49,13 +49,13 @@
         'user' => [
             'title' => 'User',
             'linkTitle' => 'listUser.php',
-            'titleC1' => NULL,
-            'titleC2' => NULL,
+            'titleC1' => '0',
+            'titleC2' => '0',
             'link_list' => 'listUser.php',
             'link_add' => 'addUser.php',
             'link_edit' => 'editUser.php',
             'link_delete' => 'deleteUser.php',
-            'test' => NULL,
+            'test' => '0',
         ],
     ];
 

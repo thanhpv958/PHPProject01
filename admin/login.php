@@ -21,10 +21,10 @@
         
         <div class="container pt-5">
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-sm-12">
                     <!-- <h2 class="text-center text-white pb-4">User Login</h2> -->
                     <div class="row">
-                        <div class="col-md-6 mx-auto">
+                        <div class="col-sm-6 mx-auto">
                             <span class="anchor" id="formLogin"></span>
 
                             <!-- form card login -->

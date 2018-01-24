@@ -3,6 +3,10 @@
     require_once '../model/m_process.php';
     class C_user {
 
+        private function isValidMd5($md5 ='') {
+            return preg_match('/^[a-f0-9]{32}$/', $md5);
+        }
+
         public function userLogin($username, $password)
         {     
             $password = md5($password);
@@ -15,7 +19,7 @@
                 }
                 header('location: ../admin/index.php'); 
             } else {
-                echo 'User not exist or not active. Please contact admin';
+                echo 'Please check infomation or contact admin to support';
              }
         }
 
@@ -75,7 +79,35 @@
             }
         }
 
-        public function editUser($id) {
+        public function editUser($id, $email, $username, $password, $role, $status) {
+            $m_user = new M_user();
+            $errors = [];
+            
+            if(filter_var($email, FILTER_VALIDATE_EMAIL) == false) {
+                echo $errors['emailIncorrect'] ='Email incorrect</br>';
+            } else {
+               $emailData = $email;
+            }
+            
+            if($this->isValidMd5($password)) {
+                $passData = $password;
+            } else {
+                $passData = md5($password);
+            }
+            
+            if(is_array($role)) {
+                $role = implode(',', $role);
+            } else {
+                $role = ' ';
+            }            
+            if( empty($errors) ) {
+                if( $m_user->editUser($id, $email, $username, $passData, $role, $status)) {
+                    return header('location: ../admin/listUser.php');
+                }  else {
+                    echo 'Error. Please check infomation or contact admin';
+                    return false;
+                }
+            }    
              
         }
     }

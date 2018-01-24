@@ -5,7 +5,7 @@
 
 ?>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-sm-12">
             <div class="listVideo text-left">
                 <h3>List Video</h3>
                 <table class="table table-hover">

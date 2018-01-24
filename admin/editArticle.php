@@ -6,7 +6,7 @@
     require_once '../controller/c_article.php';
 ?>
   <div class="row ">
-    <div class="col-md-12">
+    <div class="col-sm-12">
       <div class="edit-video">
             <?php
                 $id = isset($_GET['id']) ? $_GET['id'] : header('location: ./listArticle.php');
