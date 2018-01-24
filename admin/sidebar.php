@@ -10,32 +10,44 @@
                     </li>
                     <?php
                         require_once './permission/config.php';
-                        foreach ($arrPermission as $key => $value) {
-                       
+                        require_once '../controller/c_user.php';
+                        $c_user = new C_user();
+                        $user = $c_user->getUserByID($_SESSION['uid']);
+                        $userRole = $user[0]['role'];
+                        $roleData = explode(',', $userRole);                     
+                        foreach ($arrPermission as $per)
+                        {
+                            foreach ($roleData as  $valueRoleData)
+                            {
+                                $roleData1 = explode('|', $valueRoleData);  
+                                if($roleData1[0] == $per['title'])
+                                {                           
                     ?>
-                        <li>
-                            <a href="<?php echo $value['linkTitle'];?>">
-                                <i class="fa fa-pencil"></i> <?php echo $value['title'];?></a>
-                            <ul class="sub-menu">
-                                <?php
-                                    if($value['titleC1'] != '0' && $value['titleC2'] != '0')
-                                    {
-                                ?>
-                                        <li>
-                                            <a href="<?php echo $value['link_list'] ?>"><?php echo $value['titleC1'] ?></a>
-                                        </li>
-                                        
-                                        <li>
-                                            <a href="<?php echo $value['link_add'] ?>"><?php echo $value['titleC2'] ?></a>
-                                        </li>  
-                                <?php
-                                    }
-                                ?>
-                                
-                            </ul>
-                        </li>
+                                    <li>
+                                        <a href="<?php echo $per['linkTitle'];?>">
+                                            <i class="fa fa-pencil"></i> <?php echo $per['title'];?></a>
+                                        <ul class="sub-menu">
+                                            <?php
+                                                if($per['titleC1'] != '0' && $per['titleC2'] != '0')
+                                                {
+                                            ?>
+                                                    <li>
+                                                        <a href="<?php echo $per['link_list'] ?>"><?php echo $per['titleC1'] ?></a>
+                                                    </li>
+                                                    
+                                                    <li>
+                                                        <a href="<?php echo $per['link_add'] ?>"><?php echo $per['titleC2'] ?></a>
+                                                    </li>  
+                                            <?php
+                                                }
+                                            ?>
+                                            
+                                        </ul>
+                                    </li>
                     <?php
-                         }
+                                }
+                            }
+                        }
                     ?>
                    
                 </ul>
