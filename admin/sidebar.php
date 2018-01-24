@@ -9,18 +9,22 @@
                             <i class="fa fa-home"></i> Dashboard</a>
                     </li>
                     <?php
+                        ob_start();
                         require_once './permission/config.php';
                         require_once '../controller/c_user.php';
+
                         $c_user = new C_user();
                         $user = $c_user->getUserByID($_SESSION['uid']);
                         $userRole = $user[0]['role'];
-                        $roleData = explode(',', $userRole);                     
+                        $roleData = explode(',', $userRole);
+                      
                         foreach ($arrPermission as $per)
                         {
-                            foreach ($roleData as  $valueRoleData)
+                            foreach ($roleData as $valueRoleData)
                             {
-                                $roleData1 = explode('|', $valueRoleData);  
-                                if($roleData1[0] == $per['title'])
+                                $valueRoleData = explode('|', $valueRoleData);
+
+                                if($valueRoleData[0] == $per['title'])
                                 {                           
                     ?>
                                     <li>
@@ -40,14 +44,57 @@
                                                     </li>  
                                             <?php
                                                 }
-                                            ?>
-                                            
+                                            ?>       
                                         </ul>
                                     </li>
                     <?php
                                 }
                             }
                         }
+                       
+                        $current_url = $_SERVER['SERVER_NAME']. $_SERVER['REQUEST_URI'];
+                        $current_url = explode('/', $current_url);
+                        $countCurrentUrl = count($current_url);
+                        $countURL = 1;
+                        $okURL = 0;
+                        
+                        foreach ($current_url as $valueURl) {
+
+                            if($countURL == $countCurrentUrl) {
+                               
+                                foreach ($roleData as $valueRoleData) {
+                                    
+                                    $valueRoleData = explode('|', $valueRoleData);
+                                    
+                                    if(isset($_GET['id']) ) {
+                                        $valueURlEx = explode('?', $valueURl);
+                                        if($valueRoleData[6] == $valueURlEx[0] || $valueRoleData[7] == $valueURlEx[0]) {
+                                            $okURL = 1;
+                                            break;
+                                        }
+                                    } else if(isset($_GET['page'])) {
+                                        $valueURlEx = explode('?', $valueURl);
+                                        if($valueRoleData[6] == $valueURlEx[0] || $valueRoleData[7] == $valueURlEx[0]) {
+                                            $okURL = 1;
+                                            break;
+                                        }
+                                    } else {
+                                        if($valueRoleData[4] == $valueURl || $valueRoleData[5] == $valueURl) {   
+                                            $okURL = 1;
+                                            break;
+                                        }
+                                    }        
+                                }
+
+                                if($okURL != 1) {
+                                    if($valueURl != 'index.php') {
+                                        header('location: index.php');
+                                    }
+                                }
+                            }
+                            $countURL++;
+                        }
+                        ob_end_flush();             
                     ?>
                    
                 </ul>
