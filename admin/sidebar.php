@@ -36,11 +36,11 @@
                                                 {
                                             ?>
                                                     <li>
-                                                        <a href="<?php echo $per['link_list'] ?>"><?php echo $per['titleC1'] ?></a>
+                                                        <a href="<?php echo $per['link_list'] ?>"><i class="fa fa-star-half"></i> <?php echo $per['titleC1'] ?></a>
                                                     </li>
                                                     
                                                     <li>
-                                                        <a href="<?php echo $per['link_add'] ?>"><?php echo $per['titleC2'] ?></a>
+                                                        <a href="<?php echo $per['link_add'] ?>"><i class="fa fa-star-half"></i> <?php echo $per['titleC2'] ?></a>
                                                     </li>  
                                             <?php
                                                 }
@@ -74,7 +74,7 @@
                                         }
                                     } else if(isset($_GET['page'])) {
                                         $valueURlEx = explode('?', $valueURl);
-                                        if($valueRoleData[6] == $valueURlEx[0] || $valueRoleData[7] == $valueURlEx[0]) {
+                                        if($valueRoleData[4] == $valueURlEx[0]) {
                                             $okURL = 1;
                                             break;
                                         }

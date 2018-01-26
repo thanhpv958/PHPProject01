@@ -67,10 +67,13 @@
                         <div class="card-body">
                             <h4 class="mb-sm-4">OTHER POSTS</h4>
                             <?php
+                                require_once '../controller/c_process.php';
+                                $c_process = new C_process();
                                 foreach($otherArticle as $value)
                                 {
+                                    $articleTitleSlug = $c_process->toSlug($value['title']);
                             ?>
-                                <p> <a class="nounderline" href="./article.php?id=<?php echo $value['id'] ?>"><?php echo $value['title']?></a> </p>
+                                <p> <a class="nounderline" href="<?php echo $value['id']?>--<?php echo $articleTitleSlug;?>.html"><?php echo $value['title']?>"</a> </p>
                             <?php
                                 }
                             ?>  

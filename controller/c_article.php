@@ -13,7 +13,7 @@
             } else {
                 $this->configP = [
                     'current_page'  => $page, 
-                    'limit'         => 2, 
+                    'limit'         => 6, 
                     'link_full'     => "$linkPage.php?page={page}",
                     'link_first'    => "$linkPage.php",
                     'tableName'         => 'article'
