@@ -7,7 +7,7 @@
         <div class="col-sm-12">
             <div class="listVideo ">
                 <h3>List Article</h3>
-                <table class="table table-hover text-center">
+                <table class="table table-hover text-center table-responsive">
                     <thead>
                         <tr>
                             <th>ID</th>

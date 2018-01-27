@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-sm-2">
+        <div class="col-sm-12 col-md-2">
             <!-- start sidebar -->
             <div class="sidebar">
                 <ul class="menu">
@@ -119,5 +119,5 @@
         </div>
         <!-- end col -->
 
-        <div class="col-sm-10">
+        <div class="col-sm-12 col-md-10 content">
       

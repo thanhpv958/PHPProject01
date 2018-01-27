@@ -19,9 +19,11 @@
     <div class="container-fluid">
         <div class="header">
                 <nav class="navbar navbar-expand-md navbar-light">
-                    <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-                        aria-expanded="false" aria-label="Toggle navigation"></button>
-                    <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <button class="navbar-toggler hidden-lg-up btnSidebar" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon navbar-light"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" >
                         <form class="form-inline my-2 my-lg-0">
                             <input class="form-control mr-sm-2" type="text" placeholder="Search">
                         </form>

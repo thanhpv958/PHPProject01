@@ -7,7 +7,7 @@
         <div class="col-sm-12 col-sm-12">
             <div class="listVideo text-left">
                 <h3>List Slider</h3>
-                <table class="table table-hover">
+                <table class="table table-hover table-responsive">
                     <thead>
                         <tr>
                             <th>ID</th>
