@@ -4,7 +4,7 @@
         private $connect;
         private $query;
 
-        public function Database()
+        public function __construct()
         {
             $this->connect = mysqli_connect('localhost', 'root', '', 'phplearnblog');
             mysqli_set_charset($this->connect, 'utf8');
@@ -26,6 +26,7 @@
             list($record) = mysqli_fetch_array($this->query, MYSQLI_NUM);
             return $record;
         }
+
         public function loaddAllRows()
         {
             $result  = [];
@@ -35,6 +36,10 @@
             return $result;          
         }
 
+        function __destruct()
+        {
+           return mysqli_close($this->connect);
+        }
        
     }
 

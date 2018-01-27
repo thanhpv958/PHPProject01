@@ -74,5 +74,17 @@
 
 <script src="../lib/ckeditor/ckeditor.js"></script>
 <script src="../lib/ckfinder/ckfinder.js"></script>
+<script>
+    $(function() {
+    //CKEDITOR.replace('bodyArticle');
+        CKEDITOR.replace( 'bodyArticle',
+        {
+            filebrowserBrowseUrl: '../lib/ckfinder/ckfinder.html',
+            filebrowserImageBrowseUrl: '../lib/ckfinder/ckfinder.html?type=Images',
+            filebrowserUploadUrl: '../lib/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files',
+            filebrowserImageUploadUrl: '../lib/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images'
+        });
 
+    })
+</script>
 <?php require_once './footer.php' ?>

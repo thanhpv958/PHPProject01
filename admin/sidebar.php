@@ -32,16 +32,32 @@
                                             <i class="fa fa-pencil"></i> <?php echo $per['title'];?></a>
                                         <ul class="sub-menu">
                                             <?php
-                                                if($per['titleC1'] != '0' && $per['titleC2'] != '0')
+                                                if($per['titleC1'] != '0' && $per['titleC2'] != '0' )
                                                 {
                                             ?>
                                                     <li>
-                                                        <a href="<?php echo $per['link_list'] ?>"><i class="fa fa-star-half"></i> <?php echo $per['titleC1'] ?></a>
+                                                        <a href="<?php echo $per['link_list1'] ?>"><i class="fa fa-star-half"></i> <?php echo $per['titleC1'] ?></a>
                                                     </li>
-                                                    
+                                     
+                                                <?php
+                                                    if($per['link_list2'] != '0') {
+                                                ?>
+
+                                                    <li>
+                                                        <a href="<?php echo $per['link_list2'] ?>"><i class="fa fa-star-half"></i> <?php echo $per['titleC2'] ?></a>
+                                                    </li> 
+
+                                                <?php
+                                                    } else {
+                                                ?>
+
                                                     <li>
                                                         <a href="<?php echo $per['link_add'] ?>"><i class="fa fa-star-half"></i> <?php echo $per['titleC2'] ?></a>
-                                                    </li>  
+                                                    </li> 
+                                                    
+                                                <?php      
+                                                    }
+                                                ?> 
                                             <?php
                                                 }
                                             ?>       

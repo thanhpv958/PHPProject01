@@ -63,7 +63,7 @@
                                     
                                     $checkRole = 0;
                                     foreach ($roleData as  $valueRoleData) {
-                                        $perArr = $per['title'].'|'.$per['linkTitle'].'|'.$per['titleC1'].'|'.$per['titleC2'].'|'.$per['link_list']
+                                        $perArr = $per['title'].'|'.$per['linkTitle'].'|'.$per['titleC1'].'|'.$per['titleC2'].'|'.$per['link_list1']
                                         .'|'.$per['link_add'].'|'.$per['link_edit'].'|'.$per['link_delete'];
                                         if($valueRoleData == $perArr) {
                                             $checkRole = 1;
@@ -73,7 +73,7 @@
                             ?>
                                     <div class="col-sm-4">
                                         <input type="checkbox" name=role[]  <?php if($checkRole==1) {?> checked='checked' <?php }?> value="<?php
-                                            echo $per['title'].'|'.$per['linkTitle'].'|'.$per['titleC1'].'|'.$per['titleC2'].'|'.$per['link_list']
+                                            echo $per['title'].'|'.$per['linkTitle'].'|'.$per['titleC1'].'|'.$per['titleC2'].'|'.$per['link_list1']
                                                 .'|'.$per['link_add'].'|'.$per['link_edit'].'|'.$per['link_delete'];
                                     ?>">   
                                     <label> <?php echo $per['title'] ?> </label>

@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../public/css/admin/style.css">
     <link rel="shortcut icon" href="../public/img/admin-favicon.png">
+    <script src="../lib/bootstrap/jquery.min.js"></script>
     <title>ADMINISTRATOR - ThanhPhan</title>
 </head>
 <body>

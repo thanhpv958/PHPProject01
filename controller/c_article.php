@@ -18,8 +18,7 @@
                     'link_first'    => "$linkPage.php",
                     'tableName'         => 'article'
                 ];
-            }
-            
+            }   
         }
 
         function addArticle($title, $body, $category, $image, $time, $status) {
