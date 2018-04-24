@@ -25,9 +25,6 @@
           padding-left: 35px; }
 
 @media only screen and (max-width: 576px) {
-  .sidebar ul {
-    margin-left: 0px; } }
-@media only screen and (max-width: 768px) {
   .sidebar {
     font-size: 10px;
     position: fixed;
@@ -36,11 +33,12 @@
     z-index: 1000;
     transition: all 0.9s; }
     .sidebar ul {
-      margin-left: 4px; }
-      .sidebar ul li {
-        width: 88px !important; }
-        .sidebar ul li .sub-menu a {
-          padding: 7px 0px 9px 13px !important; }
+      margin-left: 0px; } }
+@media only screen and (max-width: 768px) {
+  .sidebar ul li {
+    width: 75px !important; }
+    .sidebar ul li .sub-menu a {
+      padding: 7px 0px 9px 13px !important; }
 
   .showmenu {
     left: 15px; } }

@@ -39,15 +39,6 @@
 
 @media only screen and (max-width: 576px) {
     .sidebar {
-        
-        ul {
-            margin-left: 0px;
-        }
-    }
-    
-}
-@media only screen and (max-width: 768px) {
-    .sidebar {
         font-size: 10px;
         position: fixed;
         left: -250px;
@@ -56,10 +47,17 @@
         transition: all 0.9s;
 
         ul {
-            margin-left: 4px;
-
+            margin-left: 0px;
+        }
+    }
+    
+}
+@media only screen and (max-width: 768px) {
+    .sidebar {
+    
+        ul {
             li {
-                width: 88px !important;
+                width: 75px !important;
 
                 .sub-menu {
                     a {

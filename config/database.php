@@ -13,7 +13,9 @@
 
         public function setQuery($query)
         {
+            //$query = addslashes($query);
             return $this->query = mysqli_query($this->connect, $query);
+
         }
 
         // public function affectedRows()
@@ -30,10 +32,11 @@
         public function loaddAllRows()
         {
             $result  = [];
-            if(mysqli_num_rows($this->query) > 0)
+            if(mysqli_num_rows($this->query) > 0) {
                 while($row = mysqli_fetch_assoc($this->query))
                     $result[] = $row;
-            return $result;          
+                return $result;
+            }    
         }
 
         function __destruct()

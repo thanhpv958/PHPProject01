@@ -37,6 +37,15 @@
             $str = preg_replace('/[&]/', 'vs', $str);
             return $str;
         }
+
+        function clearForm($input) {
+            $input = trim($input); // loại bỏ khoảng trắng 2 bên
+            $input = stripslashes($input); //loại bỏ các kí tự // \
+            //$input = strip_tags($input);
+            $input = str_replace("'", "",$input);
+            $input = htmlspecialchars($input); // chuyển các kí tự lạ sang kí tự đặc biệt của html;
+            return $input;
+        }
     }
  
 ?>

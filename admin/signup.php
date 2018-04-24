@@ -10,10 +10,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../public/css/style.css">
-    <link rel="shortcut icon" href="../../public/img/admin-favicon.png">
+    <link rel="stylesheet" href="../public/css/style.css">
+    <link rel="shortcut icon" href="../public/img/admin-favicon.png">
     <title>User Register</title>
 </head>
 <body>
@@ -34,10 +34,10 @@
                                     <a href="./login.php" class="linkAccount float-right" >Login</a>
 
                                     <?php
-                                        require_once '../controller/c_admin.php';
+                                        require_once '../controller/c_user.php';
                                         if( isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password']) && isset($_POST['repassword']) ) {
-                                            $C_admin = new C_admin();
-                                            if($C_admin->userSignup($_POST['email'], $_POST['username'], $_POST['password'], $_POST['repassword'])) {
+                                            $c_user = new C_user();
+                                            if($c_user->userSignup($_POST['email'], $_POST['username'], $_POST['password'], $_POST['repassword'])) {
                                                 $_POST['email'] = "";
                                                 $_POST['username'] = "";
                                             };                                                                        

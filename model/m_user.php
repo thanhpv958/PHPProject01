@@ -4,13 +4,13 @@
     class M_user extends Database {
         
         public function userLogin($username, $password) {
-            $query = "SELECT * FROM user WHERE username='$username' AND password='$password'";
+            $query = "SELECT * FROM user WHERE username='$username' AND password='$password' AND status=1";
             $this->setQuery($query);
             return $this->loaddAllRows();
         }
 
         public function userSignup($email, $username, $password) {
-            $query = "INSERT INTO user (email, username, password, status) VALUES ('$email', '$username', '$password', '1')";
+            $query = "INSERT INTO user (email, username, password, status) VALUES ('$email', '$username', '$password', '0')";
             return $this->setQuery($query);
         }
 

@@ -1,6 +1,7 @@
 <?php
     require_once '../model/m_user.php';
     require_once '../model/m_process.php';
+    require_once '../controller/c_process.php';
     class C_user {
 
         private function isValidMd5($md5 ='') {
@@ -8,7 +9,10 @@
         }
 
         public function userLogin($username, $password)
-        {     
+        {
+            $c_process = new C_process();
+            $username = $c_process->clearForm($username); 
+            $password = $c_process->clearForm($password);     
             $password = md5($password);
             $m_user = new M_user();
             $resultUser = $m_user->userLogin($username, $password);

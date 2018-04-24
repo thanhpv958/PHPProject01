@@ -16,8 +16,10 @@
         function recurSelectMenu($parent_id=0, $char='') {
             $m_menu = new M_menu();
             $menu  = $m_menu->getMenu($parent_id);
+            
             if($menu) {               
                     foreach($menu as $key => $value) {
+                        
                         echo "<option value='".$value['id']."'>".$char.$value['title']."</option>"; 
                         $this->recurSelectMenu($value['id'], '-');                   
                     }        

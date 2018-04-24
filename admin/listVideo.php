@@ -4,12 +4,12 @@
     require_once '../controller/c_pagination.php';
 
 ?>
-    <div class="container">
+    
     <div class="row">
         <div class="col-sm-12">
             <div class="listVideo text-left">
                 <h3>List Video</h3>
-                <table class="table table-hover table-responsive">
+                <table class="table table-hover table-responsive-xl">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -61,5 +61,5 @@
             </div>
         </div>
     </div>
-    </div>
+    
 <?php require_once './footer.php'; ?>
